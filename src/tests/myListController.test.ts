@@ -4,9 +4,7 @@ import mongoose from "mongoose";
 
 describe("My List API", () => {
   beforeAll(async () => {
-    await mongoose.connect(
-      "mongodb+srv://subhayansd10:SUBHAYAN2001@cluster0.pg28axs.mongodb.net/myListDB?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    await mongoose.connect(process.env.MONGO_URI);
   });
 
   afterAll(async () => {

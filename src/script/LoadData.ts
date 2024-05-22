@@ -110,9 +110,7 @@ const users = [
 
 const loadData = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://subhayansd10:SUBHAYAN2001@cluster0.pg28axs.mongodb.net/myListDB?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDB myListDB");
 
     await User.deleteMany({});
