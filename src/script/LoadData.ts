@@ -1,112 +1,114 @@
 import mongoose from "mongoose";
 import User from "../models/User";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const users = [
   {
     id: "user001",
     username: "john_doe",
     preferences: {
-      favoriteGenres: ["Action", "Comedy"],
+      favoriteGenres: ["Action", "Adventure"],
       dislikedGenres: ["Horror"],
     },
     watchHistory: [
       {
         contentId: "movie001",
-        watchedOn: new Date("2023-05-01T00:00:00Z"),
-        rating: 4,
-      },
-      {
-        contentId: "tvshow001",
-        watchedOn: new Date("2023-05-10T00:00:00Z"),
+        watchedOn: "2023-01-15T00:00:00.000Z",
         rating: 5,
       },
+      {
+        contentId: "movie002",
+        watchedOn: "2023-02-20T00:00:00.000Z",
+        rating: 4,
+      },
     ],
-    myList: ["movie002", "tvshow002"],
+    myList: [],
   },
   {
     id: "user002",
     username: "jane_smith",
     preferences: {
-      favoriteGenres: ["Drama", "Romance"],
-      dislikedGenres: ["SciFi"],
+      favoriteGenres: ["Romance", "Drama"],
+      dislikedGenres: ["Action"],
     },
     watchHistory: [
       {
         contentId: "movie003",
-        watchedOn: new Date("2023-04-15T00:00:00Z"),
-      },
-      {
-        contentId: "tvshow003",
-        watchedOn: new Date("2023-05-05T00:00:00Z"),
+        watchedOn: "2023-03-10T00:00:00.000Z",
         rating: 3,
       },
+      {
+        contentId: "movie004",
+        watchedOn: "2023-04-05T00:00:00.000Z",
+      },
     ],
-    myList: ["movie004", "tvshow004"],
+    myList: [],
   },
   {
     id: "user003",
     username: "alice_wonder",
     preferences: {
-      favoriteGenres: ["Fantasy", "Action"],
+      favoriteGenres: ["Comedy", "Sci-Fi"],
       dislikedGenres: ["Drama"],
     },
     watchHistory: [
       {
         contentId: "movie005",
-        watchedOn: new Date("2023-03-20T00:00:00Z"),
-        rating: 5,
-      },
-      {
-        contentId: "tvshow005",
-        watchedOn: new Date("2023-04-25T00:00:00Z"),
+        watchedOn: "2023-05-15T00:00:00.000Z",
         rating: 4,
       },
+      {
+        contentId: "movie001",
+        watchedOn: "2023-06-10T00:00:00.000Z",
+      },
     ],
-    myList: ["movie006", "tvshow006"],
+    myList: [],
   },
   {
     id: "user004",
-    username: "bob_builder",
+    username: "bob_marley",
     preferences: {
-      favoriteGenres: ["SciFi", "Horror"],
-      dislikedGenres: ["Romance"],
+      favoriteGenres: ["Horror", "Thriller"],
+      dislikedGenres: ["Comedy"],
     },
     watchHistory: [
       {
-        contentId: "movie007",
-        watchedOn: new Date("2023-02-10T00:00:00Z"),
+        contentId: "movie002",
+        watchedOn: "2023-07-20T00:00:00.000Z",
         rating: 2,
       },
       {
-        contentId: "tvshow007",
-        watchedOn: new Date("2023-03-30T00:00:00Z"),
+        contentId: "movie003",
+        watchedOn: "2023-08-10T00:00:00.000Z",
         rating: 3,
       },
     ],
-    myList: ["movie008", "tvshow008"],
+    myList: [],
   },
   {
     id: "user005",
-    username: "charlie_chap",
+    username: "charlie_brown",
     preferences: {
-      favoriteGenres: ["Comedy", "Fantasy"],
-      dislikedGenres: ["Action"],
+      favoriteGenres: ["Drama", "Adventure"],
+      dislikedGenres: ["Sci-Fi"],
     },
     watchHistory: [
       {
-        contentId: "movie009",
-        watchedOn: new Date("2023-01-05T00:00:00Z"),
+        contentId: "movie004",
+        watchedOn: "2023-09-01T00:00:00.000Z",
         rating: 5,
       },
       {
-        contentId: "tvshow009",
-        watchedOn: new Date("2023-02-15T00:00:00Z"),
-        rating: 4,
+        contentId: "movie005",
+        watchedOn: "2023-10-15T00:00:00.000Z",
       },
     ],
-    myList: ["movie010", "tvshow010"],
+    myList: [],
   },
 ];
+
 
 const loadData = async () => {
   try {

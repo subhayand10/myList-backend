@@ -28,8 +28,7 @@ export const removeFromMyList = async (req: Request, res: Response) => {
 export const listItems = async (req: Request, res: Response) => {
   try {
     const { userId } = req.params;
-    const { page = 1, limit = 10 } = req.query;
-    const items = await listMyItems(userId, Number(page), Number(limit));
+    const items = await listMyItems(userId);
     res.status(200).json(items);
   } catch (error) {
     res.status(400).json({ error: error.message });
