@@ -3,6 +3,8 @@
 This is a simple Express.js application for managing a user's list of movies/series.
 The TVShows,Movies,Users collections are already loaded with data in MONGODB Atlas.
 
+<h3>URL:</h3>https://mylist-backend.onrender.com
+
 # NOTE
 <h3>!!!Service is deployed on render free instance and will spin down frequently.Expect delays in getting reponse!!!</h3>
 
